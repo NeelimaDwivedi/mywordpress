@@ -21,5 +21,4 @@ while ( have_posts() ) :
 		comments_template();
 	}
 endwhile; // End of the loop.
-
 get_footer();

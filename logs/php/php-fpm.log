@@ -10,3 +10,14 @@
 [05-Jan-2021 15:15:55] ERROR: FPM initialization failed
 [06-Jan-2021 09:53:39] NOTICE: fpm is running, pid 2166
 [06-Jan-2021 09:53:39] NOTICE: ready to handle connections
+[06-Jan-2021 15:30:15] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[06-Jan-2021 15:30:15] ERROR: FPM initialization failed
+[06-Jan-2021 15:30:15] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[06-Jan-2021 15:30:15] ERROR: FPM initialization failed
+[06-Jan-2021 15:30:16] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[06-Jan-2021 15:30:16] ERROR: FPM initialization failed
+[06-Jan-2021 15:30:16] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[06-Jan-2021 15:30:16] ERROR: FPM initialization failed
+[06-Jan-2021 20:13:58] NOTICE: Terminating ...
+[07-Jan-2021 09:15:41] NOTICE: fpm is running, pid 2191
+[07-Jan-2021 09:15:41] NOTICE: ready to handle connections

@@ -16,7 +16,7 @@
 
 get_header();
 ?>
-
+	<div>this is the blog post index page</div>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 

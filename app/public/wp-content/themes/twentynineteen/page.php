@@ -11,7 +11,7 @@
 
 get_header();
 ?>
-
+	<div>this is the page new content</div>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
