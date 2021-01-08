@@ -628,3 +628,5 @@ function msg() {
  }
  add_action('wp_footer','msg');
 
+ echo __("Hello, world!");
+

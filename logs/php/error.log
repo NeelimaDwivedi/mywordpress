@@ -2162,3 +2162,513 @@ Stack trace:
 [07-Jan-2021 09:52:21 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-blog-header.php:13
 [07-Jan-2021 09:52:21 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
 [07-Jan-2021 09:52:21 UTC] PHP   5. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[07-Jan-2021 10:24:38 UTC] PHP Fatal error:  Cannot redeclare __() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/l10n.php:288) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/functions.php on line 631
+[07-Jan-2021 10:24:38 UTC] PHP Stack trace:
+[07-Jan-2021 10:24:38 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/index.php:0
+[07-Jan-2021 10:24:38 UTC] PHP   2. require() /home/cedcoss/Local Sites/wordpress/app/public/index.php:17
+[07-Jan-2021 10:24:38 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-blog-header.php:13
+[07-Jan-2021 10:24:38 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[07-Jan-2021 10:24:38 UTC] PHP   5. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[07-Jan-2021 11:30:13 UTC] PHP Parse error:  syntax error, unexpected 'contains' (T_STRING) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 221
+[07-Jan-2021 11:32:33 UTC] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 222
+[07-Jan-2021 12:24:38 UTC] PHP Warning:  Use of undefined constant STYLESHEETPATH - assumed 'STYLESHEETPATH' (this will throw an Error in a future version of PHP) in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php on line 663
+[07-Jan-2021 12:24:38 UTC] PHP Stack trace:
+[07-Jan-2021 12:24:38 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/index.php:0
+[07-Jan-2021 12:24:38 UTC] PHP   2. require() /home/cedcoss/Local Sites/wordpress/app/public/index.php:17
+[07-Jan-2021 12:24:38 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-blog-header.php:13
+[07-Jan-2021 12:24:38 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[07-Jan-2021 12:24:38 UTC] PHP   5. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[07-Jan-2021 12:24:38 UTC] PHP   6. include_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-settings.php:388
+[07-Jan-2021 12:24:38 UTC] PHP   7. get_template_part() /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:236
+[07-Jan-2021 12:24:38 UTC] PHP   8. locate_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/general-template.php:204
+[07-Jan-2021 12:24:38 UTC] PHP Warning:  Use of undefined constant TEMPLATEPATH - assumed 'TEMPLATEPATH' (this will throw an Error in a future version of PHP) in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php on line 666
+[07-Jan-2021 12:24:38 UTC] PHP Stack trace:
+[07-Jan-2021 12:24:38 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/index.php:0
+[07-Jan-2021 12:24:38 UTC] PHP   2. require() /home/cedcoss/Local Sites/wordpress/app/public/index.php:17
+[07-Jan-2021 12:24:38 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-blog-header.php:13
+[07-Jan-2021 12:24:38 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[07-Jan-2021 12:24:38 UTC] PHP   5. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[07-Jan-2021 12:24:38 UTC] PHP   6. include_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-settings.php:388
+[07-Jan-2021 12:24:38 UTC] PHP   7. get_template_part() /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:236
+[07-Jan-2021 12:24:38 UTC] PHP   8. locate_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/general-template.php:204
+[07-Jan-2021 13:31:56 UTC] PHP Parse error:  syntax error, unexpected 'add_filter' (T_STRING) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 237
+[07-Jan-2021 13:49:47 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php on line 287 and exactly 2 expected in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:240
+Stack trace:
+#0 /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php(287): {closure}('\n<div class="wp...')
+#1 /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/plugin.php(212): WP_Hook->apply_filters('\n<div class="wp...', Array)
+#2 /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/post-template.php(253): apply_filters('the_content', '<!-- wp:columns...')
+#3 /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/template-parts/content/content-single.php(23): the_content()
+#4 /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php(732): require('/home/cedcoss/L...')
+#5 /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/ in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 240
+[07-Jan-2021 13:50:37 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php on line 287 and exactly 2 expected in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:240
+Stack trace:
+#0 /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php(287): {closure}('\n<div class="wp...')
+#1 /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/plugin.php(212): WP_Hook->apply_filters('\n<div class="wp...', Array)
+#2 /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/post-template.php(253): apply_filters('the_content', '<!-- wp:columns...')
+#3 /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/template-parts/content/content-single.php(23): the_content()
+#4 /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php(732): require('/home/cedcoss/L...')
+#5 /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/ in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 240
+[08-Jan-2021 04:18:12 UTC] PHP Parse error:  syntax error, unexpected '$page_title' (T_VARIABLE), expecting ')' in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 240
+[08-Jan-2021 04:19:02 UTC] PHP Parse error:  syntax error, unexpected '$page_title' (T_VARIABLE), expecting ')' in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 240
+[08-Jan-2021 04:21:00 UTC] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 239
+[08-Jan-2021 04:32:19 UTC] PHP Parse error:  syntax error, unexpected '$page_title' (T_VARIABLE), expecting ')' in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/functions.php on line 635
+[08-Jan-2021 04:32:21 UTC] PHP Parse error:  syntax error, unexpected '$page_title' (T_VARIABLE), expecting ')' in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/functions.php on line 635
+[08-Jan-2021 04:43:31 UTC] PHP Fatal error:  Cannot redeclare wporg_options_page() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:335) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/functions.php on line 635
+[08-Jan-2021 04:43:31 UTC] PHP Stack trace:
+[08-Jan-2021 04:43:31 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 04:43:31 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:34
+[08-Jan-2021 04:43:31 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[08-Jan-2021 04:43:31 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[08-Jan-2021 04:44:38 UTC] PHP Parse error:  syntax error, unexpected '$page_title' (T_VARIABLE), expecting ')' in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 229
+[08-Jan-2021 04:47:02 UTC] PHP Fatal error:  Cannot redeclare wporg_options_page() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:260) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/functions.php on line 635
+[08-Jan-2021 04:47:02 UTC] PHP Stack trace:
+[08-Jan-2021 04:47:02 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 04:47:02 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:34
+[08-Jan-2021 04:47:02 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[08-Jan-2021 04:47:02 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[08-Jan-2021 05:02:56 UTC] PHP Fatal error:  Cannot redeclare wporg_options_page() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:260) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/functions.php on line 635
+[08-Jan-2021 05:02:56 UTC] PHP Stack trace:
+[08-Jan-2021 05:02:56 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:0
+[08-Jan-2021 05:02:56 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:22
+[08-Jan-2021 05:02:56 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[08-Jan-2021 05:02:56 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[08-Jan-2021 05:02:58 UTC] PHP Fatal error:  Cannot redeclare wporg_options_page() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:260) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/functions.php on line 635
+[08-Jan-2021 05:02:58 UTC] PHP Stack trace:
+[08-Jan-2021 05:02:58 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 05:02:58 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:34
+[08-Jan-2021 05:02:58 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[08-Jan-2021 05:02:58 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[08-Jan-2021 05:03:34 UTC] PHP Fatal error:  Cannot redeclare wporg_options_page() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:260) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/functions.php on line 635
+[08-Jan-2021 05:03:34 UTC] PHP Stack trace:
+[08-Jan-2021 05:03:34 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 05:03:34 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:34
+[08-Jan-2021 05:03:34 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[08-Jan-2021 05:03:34 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[08-Jan-2021 05:05:32 UTC] PHP Fatal error:  Cannot redeclare wporg_options_page() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:336) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/functions.php on line 635
+[08-Jan-2021 05:05:32 UTC] PHP Stack trace:
+[08-Jan-2021 05:05:32 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/index.php:0
+[08-Jan-2021 05:05:32 UTC] PHP   2. require() /home/cedcoss/Local Sites/wordpress/app/public/index.php:17
+[08-Jan-2021 05:05:32 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-blog-header.php:13
+[08-Jan-2021 05:05:32 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[08-Jan-2021 05:05:32 UTC] PHP   5. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[08-Jan-2021 05:08:20 UTC] PHP Fatal error:  Cannot redeclare remove_menu_page() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:228) in /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/includes/plugin.php on line 1768
+[08-Jan-2021 05:08:20 UTC] PHP Stack trace:
+[08-Jan-2021 05:08:20 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:0
+[08-Jan-2021 05:08:20 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:36
+[08-Jan-2021 05:08:21 UTC] PHP Fatal error:  Cannot redeclare remove_menu_page() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:228) in /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/includes/plugin.php on line 1768
+[08-Jan-2021 05:08:21 UTC] PHP Stack trace:
+[08-Jan-2021 05:08:21 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 05:08:21 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:97
+[08-Jan-2021 05:10:46 UTC] PHP Fatal error:  Cannot redeclare remove_menu_page() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:228) in /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/includes/plugin.php on line 1768
+[08-Jan-2021 05:10:46 UTC] PHP Stack trace:
+[08-Jan-2021 05:10:46 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:0
+[08-Jan-2021 05:10:46 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:36
+[08-Jan-2021 05:10:48 UTC] PHP Fatal error:  Cannot redeclare remove_menu_page() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:228) in /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/includes/plugin.php on line 1768
+[08-Jan-2021 05:10:48 UTC] PHP Stack trace:
+[08-Jan-2021 05:10:48 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/edit.php:0
+[08-Jan-2021 05:10:48 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/edit.php:10
+[08-Jan-2021 05:10:48 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:97
+[08-Jan-2021 05:10:51 UTC] PHP Fatal error:  Cannot redeclare remove_menu_page() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:228) in /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/includes/plugin.php on line 1768
+[08-Jan-2021 05:10:51 UTC] PHP Stack trace:
+[08-Jan-2021 05:10:51 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:0
+[08-Jan-2021 05:10:51 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:36
+[08-Jan-2021 05:10:51 UTC] PHP Fatal error:  Cannot redeclare remove_menu_page() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:228) in /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/includes/plugin.php on line 1768
+[08-Jan-2021 05:10:51 UTC] PHP Stack trace:
+[08-Jan-2021 05:10:51 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:0
+[08-Jan-2021 05:10:51 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:36
+[08-Jan-2021 05:10:51 UTC] PHP Fatal error:  Cannot redeclare remove_menu_page() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:228) in /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/includes/plugin.php on line 1768
+[08-Jan-2021 05:10:51 UTC] PHP Stack trace:
+[08-Jan-2021 05:10:51 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:0
+[08-Jan-2021 05:10:51 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:36
+[08-Jan-2021 05:11:13 UTC] PHP Fatal error:  Cannot redeclare remove_menu_page() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:228) in /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/includes/plugin.php on line 1768
+[08-Jan-2021 05:11:13 UTC] PHP Stack trace:
+[08-Jan-2021 05:11:13 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:0
+[08-Jan-2021 05:11:13 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:36
+[08-Jan-2021 05:11:13 UTC] PHP Fatal error:  Cannot redeclare remove_menu_page() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:228) in /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/includes/plugin.php on line 1768
+[08-Jan-2021 05:11:13 UTC] PHP Stack trace:
+[08-Jan-2021 05:11:13 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:0
+[08-Jan-2021 05:11:13 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:36
+[08-Jan-2021 05:11:13 UTC] PHP Fatal error:  Cannot redeclare remove_menu_page() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:228) in /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/includes/plugin.php on line 1768
+[08-Jan-2021 05:11:13 UTC] PHP Stack trace:
+[08-Jan-2021 05:11:13 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:0
+[08-Jan-2021 05:11:13 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:36
+[08-Jan-2021 05:12:13 UTC] PHP Fatal error:  Cannot redeclare remove_menu_page() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:228) in /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/includes/plugin.php on line 1768
+[08-Jan-2021 05:12:13 UTC] PHP Stack trace:
+[08-Jan-2021 05:12:13 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:0
+[08-Jan-2021 05:12:13 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:36
+[08-Jan-2021 05:13:14 UTC] PHP Fatal error:  Cannot redeclare wporg_options_page() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:324) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/functions.php on line 635
+[08-Jan-2021 05:13:14 UTC] PHP Stack trace:
+[08-Jan-2021 05:13:14 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:0
+[08-Jan-2021 05:13:14 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:22
+[08-Jan-2021 05:13:14 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[08-Jan-2021 05:13:14 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[08-Jan-2021 05:13:16 UTC] PHP Fatal error:  Cannot redeclare wporg_options_page() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:324) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/functions.php on line 635
+[08-Jan-2021 05:13:16 UTC] PHP Stack trace:
+[08-Jan-2021 05:13:16 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/index.php:0
+[08-Jan-2021 05:13:16 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/index.php:10
+[08-Jan-2021 05:13:16 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:34
+[08-Jan-2021 05:13:16 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[08-Jan-2021 05:13:16 UTC] PHP   5. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[08-Jan-2021 06:00:56 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'mysubmenu_options_page_html' not found or invalid function name in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php on line 287
+[08-Jan-2021 06:00:56 UTC] PHP Stack trace:
+[08-Jan-2021 06:00:56 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 06:00:56 UTC] PHP   2. do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:259
+[08-Jan-2021 06:00:56 UTC] PHP   3. WP_Hook->do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/plugin.php:484
+[08-Jan-2021 06:00:56 UTC] PHP   4. WP_Hook->apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php:311
+[08-Jan-2021 06:01:00 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'mysubmenu_options_page_html' not found or invalid function name in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php on line 287
+[08-Jan-2021 06:01:00 UTC] PHP Stack trace:
+[08-Jan-2021 06:01:00 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 06:01:00 UTC] PHP   2. do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:259
+[08-Jan-2021 06:01:00 UTC] PHP   3. WP_Hook->do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/plugin.php:484
+[08-Jan-2021 06:01:00 UTC] PHP   4. WP_Hook->apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php:311
+[08-Jan-2021 06:04:53 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'mysubmenu_options_page_html' not found or invalid function name in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php on line 287
+[08-Jan-2021 06:04:53 UTC] PHP Stack trace:
+[08-Jan-2021 06:04:53 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 06:04:53 UTC] PHP   2. do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:259
+[08-Jan-2021 06:04:53 UTC] PHP   3. WP_Hook->do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/plugin.php:484
+[08-Jan-2021 06:04:53 UTC] PHP   4. WP_Hook->apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php:311
+[08-Jan-2021 06:08:02 UTC] PHP Fatal error:  Cannot redeclare wporg_options_page() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:332) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 478
+[08-Jan-2021 06:08:02 UTC] PHP Stack trace:
+[08-Jan-2021 06:08:02 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:0
+[08-Jan-2021 06:08:02 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:22
+[08-Jan-2021 06:08:02 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[08-Jan-2021 06:08:02 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[08-Jan-2021 06:10:48 UTC] PHP Fatal error:  Cannot redeclare wporg_options_page_html() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:352) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 453
+[08-Jan-2021 06:10:48 UTC] PHP Stack trace:
+[08-Jan-2021 06:10:48 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 06:10:48 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:34
+[08-Jan-2021 06:10:48 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[08-Jan-2021 06:10:48 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[08-Jan-2021 06:11:17 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 262
+[08-Jan-2021 06:11:25 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 262
+[08-Jan-2021 06:13:34 UTC] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 242
+[08-Jan-2021 06:25:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_submenu_page() in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:427
+Stack trace:
+#0 /home/cedcoss/Local Sites/wordpress/app/public/wp-settings.php(388): include_once()
+#1 /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php(77): require_once('/home/cedcoss/L...')
+#2 /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php(37): require_once('/home/cedcoss/L...')
+#3 /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php(22): require_once('/home/cedcoss/L...')
+#4 {main}
+  thrown in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 427
+[08-Jan-2021 06:25:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_submenu_page() in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:427
+Stack trace:
+#0 /home/cedcoss/Local Sites/wordpress/app/public/wp-settings.php(388): include_once()
+#1 /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php(77): require_once('/home/cedcoss/L...')
+#2 /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php(37): require_once('/home/cedcoss/L...')
+#3 /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php(34): require_once('/home/cedcoss/L...')
+#4 {main}
+  thrown in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 427
+[08-Jan-2021 06:26:54 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'mymenu_options_page_html' not found or invalid function name in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php on line 287
+[08-Jan-2021 06:26:54 UTC] PHP Stack trace:
+[08-Jan-2021 06:26:54 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 06:26:54 UTC] PHP   2. do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:259
+[08-Jan-2021 06:26:54 UTC] PHP   3. WP_Hook->do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/plugin.php:484
+[08-Jan-2021 06:26:54 UTC] PHP   4. WP_Hook->apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php:311
+[08-Jan-2021 06:28:02 UTC] PHP Fatal error:  Cannot redeclare wporg_options_page_html() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:359) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 433
+[08-Jan-2021 06:28:02 UTC] PHP Stack trace:
+[08-Jan-2021 06:28:02 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:0
+[08-Jan-2021 06:28:02 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:22
+[08-Jan-2021 06:28:02 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[08-Jan-2021 06:28:02 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[08-Jan-2021 06:29:16 UTC] PHP Fatal error:  Cannot redeclare wporg_options_page_html() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:359) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 433
+[08-Jan-2021 06:29:16 UTC] PHP Stack trace:
+[08-Jan-2021 06:29:16 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:0
+[08-Jan-2021 06:29:16 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:22
+[08-Jan-2021 06:29:16 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[08-Jan-2021 06:29:16 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[08-Jan-2021 06:29:17 UTC] PHP Fatal error:  Cannot redeclare wporg_options_page_html() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:359) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 433
+[08-Jan-2021 06:29:17 UTC] PHP Stack trace:
+[08-Jan-2021 06:29:17 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/tools.php:0
+[08-Jan-2021 06:29:17 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/tools.php:40
+[08-Jan-2021 06:29:17 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:34
+[08-Jan-2021 06:29:17 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[08-Jan-2021 06:29:17 UTC] PHP   5. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[08-Jan-2021 06:29:20 UTC] PHP Fatal error:  Cannot redeclare wporg_options_page_html() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:359) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 433
+[08-Jan-2021 06:29:20 UTC] PHP Stack trace:
+[08-Jan-2021 06:29:20 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 06:29:20 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:34
+[08-Jan-2021 06:29:20 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[08-Jan-2021 06:29:20 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[08-Jan-2021 06:29:58 UTC] PHP Fatal error:  Cannot redeclare wporg_options_page_html() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:359) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 433
+[08-Jan-2021 06:29:58 UTC] PHP Stack trace:
+[08-Jan-2021 06:29:58 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 06:29:58 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:34
+[08-Jan-2021 06:29:58 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[08-Jan-2021 06:29:58 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[08-Jan-2021 06:30:22 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'mymenu_options_page_html' not found or invalid function name in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php on line 287
+[08-Jan-2021 06:30:22 UTC] PHP Stack trace:
+[08-Jan-2021 06:30:22 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 06:30:22 UTC] PHP   2. do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:259
+[08-Jan-2021 06:30:22 UTC] PHP   3. WP_Hook->do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/plugin.php:484
+[08-Jan-2021 06:30:22 UTC] PHP   4. WP_Hook->apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php:311
+[08-Jan-2021 06:31:23 UTC] PHP Parse error:  syntax error, unexpected ''mysubmenu_options_page_html'' (T_CONSTANT_ENCAPSED_STRING), expecting '(' in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 412
+[08-Jan-2021 06:31:42 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'mymenu_options_page_html' not found or invalid function name in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php on line 287
+[08-Jan-2021 06:31:42 UTC] PHP Stack trace:
+[08-Jan-2021 06:31:42 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 06:31:42 UTC] PHP   2. do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:259
+[08-Jan-2021 06:31:42 UTC] PHP   3. WP_Hook->do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/plugin.php:484
+[08-Jan-2021 06:31:42 UTC] PHP   4. WP_Hook->apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php:311
+[08-Jan-2021 06:33:03 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'mymenu_options_page_html' not found or invalid function name in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php on line 287
+[08-Jan-2021 06:33:03 UTC] PHP Stack trace:
+[08-Jan-2021 06:33:03 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 06:33:03 UTC] PHP   2. do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:259
+[08-Jan-2021 06:33:03 UTC] PHP   3. WP_Hook->do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/plugin.php:484
+[08-Jan-2021 06:33:03 UTC] PHP   4. WP_Hook->apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php:311
+[08-Jan-2021 06:33:40 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'mymenu_options_page_html' not found or invalid function name in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php on line 287
+[08-Jan-2021 06:33:40 UTC] PHP Stack trace:
+[08-Jan-2021 06:33:40 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 06:33:40 UTC] PHP   2. do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:259
+[08-Jan-2021 06:33:40 UTC] PHP   3. WP_Hook->do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/plugin.php:484
+[08-Jan-2021 06:33:40 UTC] PHP   4. WP_Hook->apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php:311
+[08-Jan-2021 06:34:08 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'mymenu_options_page_html' not found or invalid function name in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php on line 287
+[08-Jan-2021 06:34:08 UTC] PHP Stack trace:
+[08-Jan-2021 06:34:08 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 06:34:08 UTC] PHP   2. do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:259
+[08-Jan-2021 06:34:08 UTC] PHP   3. WP_Hook->do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/plugin.php:484
+[08-Jan-2021 06:34:08 UTC] PHP   4. WP_Hook->apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php:311
+[08-Jan-2021 06:36:41 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'mymenu_options_page_html' not found or invalid function name in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php on line 287
+[08-Jan-2021 06:36:41 UTC] PHP Stack trace:
+[08-Jan-2021 06:36:41 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 06:36:41 UTC] PHP   2. do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:259
+[08-Jan-2021 06:36:41 UTC] PHP   3. WP_Hook->do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/plugin.php:484
+[08-Jan-2021 06:36:41 UTC] PHP   4. WP_Hook->apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php:311
+[08-Jan-2021 06:36:42 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'mymenu_options_page_html' not found or invalid function name in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php on line 287
+[08-Jan-2021 06:36:42 UTC] PHP Stack trace:
+[08-Jan-2021 06:36:42 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 06:36:42 UTC] PHP   2. do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:259
+[08-Jan-2021 06:36:42 UTC] PHP   3. WP_Hook->do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/plugin.php:484
+[08-Jan-2021 06:36:42 UTC] PHP   4. WP_Hook->apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php:311
+[08-Jan-2021 06:37:27 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'mymenu_options_page_html' not found or invalid function name in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php on line 287
+[08-Jan-2021 06:37:27 UTC] PHP Stack trace:
+[08-Jan-2021 06:37:27 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 06:37:27 UTC] PHP   2. do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:259
+[08-Jan-2021 06:37:27 UTC] PHP   3. WP_Hook->do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/plugin.php:484
+[08-Jan-2021 06:37:27 UTC] PHP   4. WP_Hook->apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php:311
+[08-Jan-2021 06:37:40 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'mymenu_options_page_html' not found or invalid function name in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php on line 287
+[08-Jan-2021 06:37:40 UTC] PHP Stack trace:
+[08-Jan-2021 06:37:40 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 06:37:40 UTC] PHP   2. do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:259
+[08-Jan-2021 06:37:40 UTC] PHP   3. WP_Hook->do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/plugin.php:484
+[08-Jan-2021 06:37:40 UTC] PHP   4. WP_Hook->apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php:311
+[08-Jan-2021 06:37:49 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'mymenu_options_page_html' not found or invalid function name in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php on line 287
+[08-Jan-2021 06:37:49 UTC] PHP Stack trace:
+[08-Jan-2021 06:37:49 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 06:37:49 UTC] PHP   2. do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:259
+[08-Jan-2021 06:37:49 UTC] PHP   3. WP_Hook->do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/plugin.php:484
+[08-Jan-2021 06:37:49 UTC] PHP   4. WP_Hook->apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php:311
+[08-Jan-2021 06:37:52 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'mymenu_options_page_html' not found or invalid function name in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php on line 287
+[08-Jan-2021 06:37:52 UTC] PHP Stack trace:
+[08-Jan-2021 06:37:52 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 06:37:52 UTC] PHP   2. do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:259
+[08-Jan-2021 06:37:52 UTC] PHP   3. WP_Hook->do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/plugin.php:484
+[08-Jan-2021 06:37:52 UTC] PHP   4. WP_Hook->apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php:311
+[08-Jan-2021 06:38:36 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ';' in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 411
+[08-Jan-2021 06:38:55 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ';' in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 411
+[08-Jan-2021 06:40:46 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ';' in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 411
+[08-Jan-2021 07:52:31 UTC] PHP Fatal error:  Cannot redeclare wporg_settings_init() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:252) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 473
+[08-Jan-2021 07:52:31 UTC] PHP Stack trace:
+[08-Jan-2021 07:52:31 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:0
+[08-Jan-2021 07:52:31 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:22
+[08-Jan-2021 07:52:31 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[08-Jan-2021 07:52:31 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[08-Jan-2021 07:53:40 UTC] PHP Fatal error:  Cannot redeclare wporg_settings_init() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:252) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 473
+[08-Jan-2021 07:53:40 UTC] PHP Stack trace:
+[08-Jan-2021 07:53:40 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:0
+[08-Jan-2021 07:53:40 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:22
+[08-Jan-2021 07:53:40 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[08-Jan-2021 07:53:40 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[08-Jan-2021 07:53:41 UTC] PHP Fatal error:  Cannot redeclare wporg_settings_init() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:252) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 473
+[08-Jan-2021 07:53:41 UTC] PHP Stack trace:
+[08-Jan-2021 07:53:41 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 07:53:41 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:34
+[08-Jan-2021 07:53:41 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[08-Jan-2021 07:53:41 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[08-Jan-2021 09:27:27 UTC] PHP Fatal error:  Cannot redeclare wporg_section_developers_callback() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:296) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 510
+[08-Jan-2021 09:27:27 UTC] PHP Stack trace:
+[08-Jan-2021 09:27:27 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:0
+[08-Jan-2021 09:27:27 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:22
+[08-Jan-2021 09:27:27 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[08-Jan-2021 09:27:27 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[08-Jan-2021 09:29:27 UTC] PHP Fatal error:  Cannot redeclare wporg_field_pill_cb() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:312) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 544
+[08-Jan-2021 09:29:27 UTC] PHP Stack trace:
+[08-Jan-2021 09:29:27 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:0
+[08-Jan-2021 09:29:27 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:22
+[08-Jan-2021 09:29:27 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[08-Jan-2021 09:29:27 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[08-Jan-2021 09:31:27 UTC] PHP Fatal error:  Cannot redeclare wporg_options_page() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:339) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 557
+[08-Jan-2021 09:31:27 UTC] PHP Stack trace:
+[08-Jan-2021 09:31:27 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:0
+[08-Jan-2021 09:31:27 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:22
+[08-Jan-2021 09:31:27 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[08-Jan-2021 09:31:27 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[08-Jan-2021 09:31:49 UTC] PHP Fatal error:  Cannot redeclare wporg_options_page() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:339) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 557
+[08-Jan-2021 09:31:49 UTC] PHP Stack trace:
+[08-Jan-2021 09:31:49 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 09:31:49 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:34
+[08-Jan-2021 09:31:49 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[08-Jan-2021 09:31:49 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[08-Jan-2021 09:49:28 UTC] PHP Warning:  call_user_func() expects parameter 1 to be a valid callback, function 'from_field' not found or invalid function name in /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/includes/template.php on line 1737
+[08-Jan-2021 09:49:28 UTC] PHP Stack trace:
+[08-Jan-2021 09:49:28 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 09:49:28 UTC] PHP   2. do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:259
+[08-Jan-2021 09:49:28 UTC] PHP   3. WP_Hook->do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/plugin.php:484
+[08-Jan-2021 09:49:28 UTC] PHP   4. WP_Hook->apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php:311
+[08-Jan-2021 09:49:28 UTC] PHP   5. replace_options_page_html() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php:287
+[08-Jan-2021 09:49:28 UTC] PHP   6. do_settings_sections() /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:625
+[08-Jan-2021 09:49:28 UTC] PHP   7. do_settings_fields() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/includes/template.php:1695
+[08-Jan-2021 09:50:02 UTC] PHP Warning:  call_user_func() expects parameter 1 to be a valid callback, function 'from_field' not found or invalid function name in /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/includes/template.php on line 1737
+[08-Jan-2021 09:50:02 UTC] PHP Stack trace:
+[08-Jan-2021 09:50:02 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:0
+[08-Jan-2021 09:50:02 UTC] PHP   2. do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin.php:259
+[08-Jan-2021 09:50:02 UTC] PHP   3. WP_Hook->do_action() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/plugin.php:484
+[08-Jan-2021 09:50:02 UTC] PHP   4. WP_Hook->apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php:311
+[08-Jan-2021 09:50:02 UTC] PHP   5. replace_options_page_html() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php:287
+[08-Jan-2021 09:50:02 UTC] PHP   6. do_settings_sections() /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:625
+[08-Jan-2021 09:50:02 UTC] PHP   7. do_settings_fields() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/includes/template.php:1695
+[08-Jan-2021 10:12:15 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 572
+[08-Jan-2021 10:17:36 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 571
+[08-Jan-2021 10:19:05 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 571
+[08-Jan-2021 10:19:06 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 571
+[08-Jan-2021 11:02:09 UTC] PHP Parse error:  syntax error, unexpected 'text' (T_STRING) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 580
+[08-Jan-2021 11:12:12 UTC] PHP Fatal error:  Cannot redeclare filter_the_content_in_the_main_loop() (previously declared in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php:219) in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 471
+[08-Jan-2021 11:12:12 UTC] PHP Stack trace:
+[08-Jan-2021 11:12:12 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:0
+[08-Jan-2021 11:12:12 UTC] PHP   2. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-admin/admin-ajax.php:22
+[08-Jan-2021 11:12:12 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-load.php:37
+[08-Jan-2021 11:12:12 UTC] PHP   4. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-config.php:77
+[08-Jan-2021 11:19:51 UTC] PHP Parse error:  syntax error, unexpected '''' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 601
+[08-Jan-2021 11:20:15 UTC] PHP Parse error:  syntax error, unexpected ''dashicons-welcome-write-blog'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home/cedcoss/Local Sites/wordpress/app/public/wp-content/plugins/my-first-plugin/my-first-plugin.php on line 601
+[08-Jan-2021 11:35:02 UTC] PHP Warning:  preg_match_all() expects parameter 2 to be string, array given in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/formatting.php on line 233
+[08-Jan-2021 11:35:02 UTC] PHP Stack trace:
+[08-Jan-2021 11:35:02 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/index.php:0
+[08-Jan-2021 11:35:02 UTC] PHP   2. require() /home/cedcoss/Local Sites/wordpress/app/public/index.php:17
+[08-Jan-2021 11:35:02 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-blog-header.php:19
+[08-Jan-2021 11:35:02 UTC] PHP   4. include() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template-loader.php:106
+[08-Jan-2021 11:35:02 UTC] PHP   5. get_header() /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/front-page.php:17
+[08-Jan-2021 11:35:02 UTC] PHP   6. locate_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/general-template.php:48
+[08-Jan-2021 11:35:02 UTC] PHP   7. load_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:676
+[08-Jan-2021 11:35:02 UTC] PHP   8. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:730
+[08-Jan-2021 11:35:02 UTC] PHP   9. get_template_part() /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/header.php:28
+[08-Jan-2021 11:35:02 UTC] PHP  10. locate_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/general-template.php:204
+[08-Jan-2021 11:35:02 UTC] PHP  11. load_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:676
+[08-Jan-2021 11:35:02 UTC] PHP  12. require() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:732
+[08-Jan-2021 11:35:02 UTC] PHP  13. get_template_part() /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/template-parts/header/site-header.php:19
+[08-Jan-2021 11:35:02 UTC] PHP  14. locate_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/general-template.php:204
+[08-Jan-2021 11:35:02 UTC] PHP  15. load_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:676
+[08-Jan-2021 11:35:02 UTC] PHP  16. require() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:732
+[08-Jan-2021 11:35:02 UTC] PHP  17. wp_nav_menu() /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/template-parts/header/site-nav.php:27
+[08-Jan-2021 11:35:02 UTC] PHP  18. walk_nav_menu_tree() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/nav-menu-template.php:228
+[08-Jan-2021 11:35:02 UTC] PHP  19. Walker_Nav_Menu->walk() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/nav-menu-template.php:608
+[08-Jan-2021 11:35:02 UTC] PHP  20. Walker_Nav_Menu->display_element() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-walker.php:244
+[08-Jan-2021 11:35:02 UTC] PHP  21. Walker_Nav_Menu->start_el() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-walker.php:144
+[08-Jan-2021 11:35:02 UTC] PHP  22. apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-walker-nav-menu.php:213
+[08-Jan-2021 11:35:02 UTC] PHP  23. WP_Hook->apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/plugin.php:212
+[08-Jan-2021 11:35:02 UTC] PHP  24. wptexturize() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php:289
+[08-Jan-2021 11:35:02 UTC] PHP  25. preg_match_all() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/formatting.php:233
+[08-Jan-2021 11:35:02 UTC] PHP Warning:  array_intersect(): Expected parameter 2 to be an array, null given in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/formatting.php on line 234
+[08-Jan-2021 11:35:02 UTC] PHP Stack trace:
+[08-Jan-2021 11:35:02 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/index.php:0
+[08-Jan-2021 11:35:02 UTC] PHP   2. require() /home/cedcoss/Local Sites/wordpress/app/public/index.php:17
+[08-Jan-2021 11:35:02 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-blog-header.php:19
+[08-Jan-2021 11:35:02 UTC] PHP   4. include() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template-loader.php:106
+[08-Jan-2021 11:35:02 UTC] PHP   5. get_header() /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/front-page.php:17
+[08-Jan-2021 11:35:02 UTC] PHP   6. locate_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/general-template.php:48
+[08-Jan-2021 11:35:02 UTC] PHP   7. load_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:676
+[08-Jan-2021 11:35:02 UTC] PHP   8. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:730
+[08-Jan-2021 11:35:02 UTC] PHP   9. get_template_part() /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/header.php:28
+[08-Jan-2021 11:35:02 UTC] PHP  10. locate_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/general-template.php:204
+[08-Jan-2021 11:35:02 UTC] PHP  11. load_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:676
+[08-Jan-2021 11:35:02 UTC] PHP  12. require() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:732
+[08-Jan-2021 11:35:02 UTC] PHP  13. get_template_part() /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/template-parts/header/site-header.php:19
+[08-Jan-2021 11:35:02 UTC] PHP  14. locate_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/general-template.php:204
+[08-Jan-2021 11:35:02 UTC] PHP  15. load_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:676
+[08-Jan-2021 11:35:02 UTC] PHP  16. require() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:732
+[08-Jan-2021 11:35:02 UTC] PHP  17. wp_nav_menu() /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/template-parts/header/site-nav.php:27
+[08-Jan-2021 11:35:02 UTC] PHP  18. walk_nav_menu_tree() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/nav-menu-template.php:228
+[08-Jan-2021 11:35:02 UTC] PHP  19. Walker_Nav_Menu->walk() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/nav-menu-template.php:608
+[08-Jan-2021 11:35:02 UTC] PHP  20. Walker_Nav_Menu->display_element() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-walker.php:244
+[08-Jan-2021 11:35:02 UTC] PHP  21. Walker_Nav_Menu->start_el() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-walker.php:144
+[08-Jan-2021 11:35:02 UTC] PHP  22. apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-walker-nav-menu.php:213
+[08-Jan-2021 11:35:02 UTC] PHP  23. WP_Hook->apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/plugin.php:212
+[08-Jan-2021 11:35:02 UTC] PHP  24. wptexturize() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php:289
+[08-Jan-2021 11:35:02 UTC] PHP  25. array_intersect() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/formatting.php:234
+[08-Jan-2021 11:35:02 UTC] PHP Warning:  preg_split() expects parameter 2 to be string, array given in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/formatting.php on line 239
+[08-Jan-2021 11:35:02 UTC] PHP Stack trace:
+[08-Jan-2021 11:35:02 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/index.php:0
+[08-Jan-2021 11:35:02 UTC] PHP   2. require() /home/cedcoss/Local Sites/wordpress/app/public/index.php:17
+[08-Jan-2021 11:35:02 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-blog-header.php:19
+[08-Jan-2021 11:35:02 UTC] PHP   4. include() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template-loader.php:106
+[08-Jan-2021 11:35:02 UTC] PHP   5. get_header() /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/front-page.php:17
+[08-Jan-2021 11:35:02 UTC] PHP   6. locate_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/general-template.php:48
+[08-Jan-2021 11:35:02 UTC] PHP   7. load_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:676
+[08-Jan-2021 11:35:02 UTC] PHP   8. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:730
+[08-Jan-2021 11:35:02 UTC] PHP   9. get_template_part() /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/header.php:28
+[08-Jan-2021 11:35:02 UTC] PHP  10. locate_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/general-template.php:204
+[08-Jan-2021 11:35:02 UTC] PHP  11. load_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:676
+[08-Jan-2021 11:35:02 UTC] PHP  12. require() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:732
+[08-Jan-2021 11:35:02 UTC] PHP  13. get_template_part() /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/template-parts/header/site-header.php:19
+[08-Jan-2021 11:35:02 UTC] PHP  14. locate_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/general-template.php:204
+[08-Jan-2021 11:35:02 UTC] PHP  15. load_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:676
+[08-Jan-2021 11:35:02 UTC] PHP  16. require() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:732
+[08-Jan-2021 11:35:02 UTC] PHP  17. wp_nav_menu() /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/template-parts/header/site-nav.php:27
+[08-Jan-2021 11:35:02 UTC] PHP  18. walk_nav_menu_tree() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/nav-menu-template.php:228
+[08-Jan-2021 11:35:02 UTC] PHP  19. Walker_Nav_Menu->walk() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/nav-menu-template.php:608
+[08-Jan-2021 11:35:02 UTC] PHP  20. Walker_Nav_Menu->display_element() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-walker.php:244
+[08-Jan-2021 11:35:02 UTC] PHP  21. Walker_Nav_Menu->start_el() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-walker.php:144
+[08-Jan-2021 11:35:02 UTC] PHP  22. apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-walker-nav-menu.php:213
+[08-Jan-2021 11:35:02 UTC] PHP  23. WP_Hook->apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/plugin.php:212
+[08-Jan-2021 11:35:02 UTC] PHP  24. wptexturize() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php:289
+[08-Jan-2021 11:35:02 UTC] PHP  25. preg_split() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/formatting.php:239
+[08-Jan-2021 11:35:02 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/formatting.php on line 241
+[08-Jan-2021 11:35:02 UTC] PHP Stack trace:
+[08-Jan-2021 11:35:02 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/index.php:0
+[08-Jan-2021 11:35:02 UTC] PHP   2. require() /home/cedcoss/Local Sites/wordpress/app/public/index.php:17
+[08-Jan-2021 11:35:02 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-blog-header.php:19
+[08-Jan-2021 11:35:02 UTC] PHP   4. include() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template-loader.php:106
+[08-Jan-2021 11:35:02 UTC] PHP   5. get_header() /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/front-page.php:17
+[08-Jan-2021 11:35:02 UTC] PHP   6. locate_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/general-template.php:48
+[08-Jan-2021 11:35:02 UTC] PHP   7. load_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:676
+[08-Jan-2021 11:35:02 UTC] PHP   8. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:730
+[08-Jan-2021 11:35:02 UTC] PHP   9. get_template_part() /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/header.php:28
+[08-Jan-2021 11:35:02 UTC] PHP  10. locate_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/general-template.php:204
+[08-Jan-2021 11:35:02 UTC] PHP  11. load_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:676
+[08-Jan-2021 11:35:02 UTC] PHP  12. require() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:732
+[08-Jan-2021 11:35:02 UTC] PHP  13. get_template_part() /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/template-parts/header/site-header.php:19
+[08-Jan-2021 11:35:02 UTC] PHP  14. locate_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/general-template.php:204
+[08-Jan-2021 11:35:02 UTC] PHP  15. load_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:676
+[08-Jan-2021 11:35:02 UTC] PHP  16. require() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:732
+[08-Jan-2021 11:35:02 UTC] PHP  17. wp_nav_menu() /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/template-parts/header/site-nav.php:27
+[08-Jan-2021 11:35:02 UTC] PHP  18. walk_nav_menu_tree() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/nav-menu-template.php:228
+[08-Jan-2021 11:35:02 UTC] PHP  19. Walker_Nav_Menu->walk() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/nav-menu-template.php:608
+[08-Jan-2021 11:35:02 UTC] PHP  20. Walker_Nav_Menu->display_element() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-walker.php:244
+[08-Jan-2021 11:35:02 UTC] PHP  21. Walker_Nav_Menu->start_el() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-walker.php:144
+[08-Jan-2021 11:35:02 UTC] PHP  22. apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-walker-nav-menu.php:213
+[08-Jan-2021 11:35:02 UTC] PHP  23. WP_Hook->apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/plugin.php:212
+[08-Jan-2021 11:35:02 UTC] PHP  24. wptexturize() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php:289
+[08-Jan-2021 11:35:02 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/formatting.php on line 301
+[08-Jan-2021 11:35:02 UTC] PHP Stack trace:
+[08-Jan-2021 11:35:02 UTC] PHP   1. {main}() /home/cedcoss/Local Sites/wordpress/app/public/index.php:0
+[08-Jan-2021 11:35:02 UTC] PHP   2. require() /home/cedcoss/Local Sites/wordpress/app/public/index.php:17
+[08-Jan-2021 11:35:02 UTC] PHP   3. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-blog-header.php:19
+[08-Jan-2021 11:35:02 UTC] PHP   4. include() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template-loader.php:106
+[08-Jan-2021 11:35:02 UTC] PHP   5. get_header() /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/front-page.php:17
+[08-Jan-2021 11:35:02 UTC] PHP   6. locate_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/general-template.php:48
+[08-Jan-2021 11:35:02 UTC] PHP   7. load_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:676
+[08-Jan-2021 11:35:02 UTC] PHP   8. require_once() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:730
+[08-Jan-2021 11:35:02 UTC] PHP   9. get_template_part() /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/header.php:28
+[08-Jan-2021 11:35:02 UTC] PHP  10. locate_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/general-template.php:204
+[08-Jan-2021 11:35:02 UTC] PHP  11. load_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:676
+[08-Jan-2021 11:35:02 UTC] PHP  12. require() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:732
+[08-Jan-2021 11:35:02 UTC] PHP  13. get_template_part() /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/template-parts/header/site-header.php:19
+[08-Jan-2021 11:35:02 UTC] PHP  14. locate_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/general-template.php:204
+[08-Jan-2021 11:35:02 UTC] PHP  15. load_template() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:676
+[08-Jan-2021 11:35:02 UTC] PHP  16. require() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/template.php:732
+[08-Jan-2021 11:35:02 UTC] PHP  17. wp_nav_menu() /home/cedcoss/Local Sites/wordpress/app/public/wp-content/themes/twentytwentyone/template-parts/header/site-nav.php:27
+[08-Jan-2021 11:35:02 UTC] PHP  18. walk_nav_menu_tree() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/nav-menu-template.php:228
+[08-Jan-2021 11:35:02 UTC] PHP  19. Walker_Nav_Menu->walk() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/nav-menu-template.php:608
+[08-Jan-2021 11:35:02 UTC] PHP  20. Walker_Nav_Menu->display_element() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-walker.php:244
+[08-Jan-2021 11:35:02 UTC] PHP  21. Walker_Nav_Menu->start_el() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-walker.php:144
+[08-Jan-2021 11:35:02 UTC] PHP  22. apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-walker-nav-menu.php:213
+[08-Jan-2021 11:35:02 UTC] PHP  23. WP_Hook->apply_filters() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/plugin.php:212
+[08-Jan-2021 11:35:02 UTC] PHP  24. wptexturize() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/class-wp-hook.php:289
+[08-Jan-2021 11:35:02 UTC] PHP  25. implode() /home/cedcoss/Local Sites/wordpress/app/public/wp-includes/formatting.php:301

@@ -21,3 +21,15 @@
 [06-Jan-2021 20:13:58] NOTICE: Terminating ...
 [07-Jan-2021 09:15:41] NOTICE: fpm is running, pid 2191
 [07-Jan-2021 09:15:41] NOTICE: ready to handle connections
+[07-Jan-2021 18:26:41] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[07-Jan-2021 18:26:41] ERROR: FPM initialization failed
+[07-Jan-2021 18:26:41] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[07-Jan-2021 18:26:41] ERROR: FPM initialization failed
+[07-Jan-2021 18:26:42] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[07-Jan-2021 18:26:42] ERROR: FPM initialization failed
+[07-Jan-2021 18:26:43] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[07-Jan-2021 18:26:43] ERROR: FPM initialization failed
+[07-Jan-2021 20:13:42] NOTICE: Terminating ...
+[07-Jan-2021 20:13:42] NOTICE: exiting, bye-bye!
+[08-Jan-2021 09:30:57] NOTICE: fpm is running, pid 2395
+[08-Jan-2021 09:30:57] NOTICE: ready to handle connections
