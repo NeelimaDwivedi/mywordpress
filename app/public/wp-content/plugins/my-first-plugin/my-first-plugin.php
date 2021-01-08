@@ -476,17 +476,17 @@ add_filter( 'the_excerpt', 'replace_content');
 add_filter( 'the_comment_text', 'replace_content');
 
 function replace_settings_init() {
-    // Register a new setting for "wporg" page.
+    // Register a new setting for "replace" page.
     register_setting( 'replace', 'replace_options' );
  
-    // Register a new section in the "wporg" page.
+    // Register a new section in the "replace" page.
     add_settings_section(
         'replace_section_developers',
         __( 'This is the text replace form.', 'replace' ), 'replace_section_developers_callback',
         'replace'
     );
  
-    // Register a new field in the "wporg_section_developers" section, inside the "wporg" page.
+    // Register a new field in the "replace_section_developers" section, inside the "replace" page.
     add_settings_field(
         'from', // As of WP 4.6 this value is used only internally.
                                 // Use $args' label_for to populate the id inside the callback.
@@ -529,7 +529,7 @@ function replace_settings_init() {
 }
  
 /**
- * Register our wporg_settings_init to the admin_init action hook.
+ * Register our replace_settings_init to the admin_init action hook.
  */
 add_action( 'admin_init', 'replace_settings_init' );
  
@@ -608,7 +608,7 @@ function replace_options_page() {
  
  
 /**
- * Register our wporg_options_page to the admin_menu action hook.
+ * Register our replace_options_page to the admin_menu action hook.
  */
 add_action( 'admin_menu', 'replace_options_page' );
  
