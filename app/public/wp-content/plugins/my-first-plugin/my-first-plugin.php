@@ -27,7 +27,7 @@
  * License:           GNU General Public License v3.0
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.html
  */
-
+//echo '<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">';
 // If this file is called directly, abort.
 if ( ! defined( 'ABSPATH' ) ) {
 	die;
@@ -209,26 +209,26 @@ function my_first_plugin_settings_link( $links ) {
 // 	echo $var;
 // }
 
-add_filter('my_filt', 'show_bye'); 
-function show_bye($var) {
-	$var="bye world";
-	return $var;
-}
+// add_filter('my_filt', 'show_bye'); 
+// function show_bye($var) {
+// 	$var="bye world";
+// 	return $var;
+// }
 
-add_filter( 'the_content', 'filter_the_content_in_the_main_loop', 1 );
-function filter_the_content_in_the_main_loop( $content ) {
-			return str_ireplace("destroy ","bye",$content);;
-}
+// add_filter( 'the_content', 'filter_the_content_in_the_main_loop', 1 );
+// function filter_the_content_in_the_main_loop( $content ) {
+// 			return str_ireplace("destroy ","bye",$content);;
+// }
 
-add_filter('the_content', 'add_content_after');
-function add_content_after($content) {
-	$count = str_word_count(strip_tags($content));
-	$after_content= 'total no. of words:'.$count;
-	echo $after_content;
-	$fullcontent = $content;
-	return $fullcontent;
+// add_filter('the_content', 'add_content_after');
+// function add_content_after($content) {
+// 	$count = str_word_count(strip_tags($content));
+// 	$after_content= 'total no. of words:'.$count;
+// 	echo $after_content;
+// 	$fullcontent = $content;
+// 	return $fullcontent;
 
-}
+// }
 ?>
 <?php
 /**
@@ -398,7 +398,7 @@ function mymenu_options_page() {
 	);
 }
 function mymenu_options_page_html() {
-	echo '<b>My Top level menu</b>';
+	//echo '<b>My Top level menu</b>';
 	return false;
 }
 
@@ -414,7 +414,23 @@ function mysubmenu_options_page()
         'Mysubmenu',
 		'mysubmenu_options_page_html',
     );
-}
+}function replace_metacontent( $text ) {
+	$option=get_post_meta( '_replace_meta_select' );
+	$from=get_post_meta( '_replace_meta_from' );
+	$to=get_post_meta( '_replace_meta_to' );
+	echo $option;
+	   if($option=='exact') {
+		   echo 'hii';
+		   $var=str_replace($from.' ',$to,$text);
+		   return $var;
+	   }	
+	   elseif($option=='contains') {
+		echo 'hii';
+		   $var=str_replace($from.' ',$to,$text);
+		   return $var;
+	   }	
+   }
+   add_filter( 'the_content', 'replace_metacontent');
 add_action('admin_menu', 'mysubmenu_options_page');
 function mysubmenu_options_page_html() {
     // check user capabilities
@@ -559,7 +575,7 @@ function replace_section_developers_callback( $args ) {
  * - the "class" key value is used for the "class" attribute of the <tr> containing the field.
  * Note: you can add custom key value pairs to be used inside your callbacks.
  *
- * @param array $args
+ * @param array $argsmydetails_options
  */
 function replace_dropdown( $args ) {
     // Get the value of the setting we've registered with register_setting()
@@ -650,4 +666,3 @@ function replace_options_page_html() {
     </div>
     <?php
 }
-

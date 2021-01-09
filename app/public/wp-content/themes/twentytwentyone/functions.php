@@ -607,26 +607,26 @@ function twentytwentyone_add_ie_class() {
 	</script>
 	<?php
 }
-add_action( 'wp_footer', 'twentytwentyone_add_ie_class' );
+// add_action( 'wp_footer', 'twentytwentyone_add_ie_class' );
 
-add_filter('change_variable', 'display');
-function display($fname) {
-	$fname='Divyanshi';
-	return $fname;
-}
-add_action('post_display', 'show');
-function show($fname) {
-	//echo 'this is done by action'.' '.$fname;
-	$data=add_filter('change_variable', function ($fname) {
-		$fname='Divyanshi';
-		return $fname;
-	});
-	echo $data;
-}
-function msg() {
-	echo "Copyright All Rights Reserved ";
- }
- add_action('wp_footer','msg');
+// add_filter('change_variable', 'display');
+// function display($fname) {
+// 	$fname='Divyanshi';
+// 	return $fname;
+// }
+// add_action('post_display', 'show');
+// function show($fname) {
+// 	//echo 'this is done by action'.' '.$fname;
+// 	$data=add_filter('change_variable', function ($fname) {
+// 		$fname='Divyanshi';
+// 		return $fname;
+// 	});
+// 	echo $data;
+// }
+// function msg() {
+// 	echo "Copyright All Rights Reserved ";
+//  }
+//  add_action('wp_footer','msg');
 
- echo __("Hello, world!");
+//  echo __("Hello, world!");
 

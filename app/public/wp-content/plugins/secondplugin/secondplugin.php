@@ -212,7 +212,7 @@ function mysetting_options_page() {
         'mysetting',
         'mysetting_options_page_html',
         'dashicons-menu-alt3',
-         79
+         89
     );
 }
 
@@ -288,22 +288,23 @@ function mydetails_section_developers_callback( $args ) {
 function mydetails_name( $args ) {
 	$options = get_option( 'mydetails_options' );
 	?>
-    <input type="text" name="mydetails_options[<?php echo esc_attr( $args['label_for'] ); ?>]" id=<?php echo esc_attr( $args['label_for'] ); ?> value="<?php echo esc_attr($option['input1'])?>"/>
+    <input type="text" name="mydetails_options[<?php echo esc_attr( $args['label_for'] ); ?>]" id=<?php echo esc_attr( $args['label_for'] ); ?> value="<?php echo esc_attr($options['input1'])?>"/>
 	<?php
 }
 
 function mydetails_age( $args ) {
 	$options = get_option( 'mydetails_options' );
 	?>
-    <input type="text" name="mydetails_options[<?php echo esc_attr( $args['label_for'] ); ?>]" id=<?php echo esc_attr( $args['label_for'] ); ?> value="<?php echo esc_attr($option['input2'])?>"/>
+    <input type="text" name="mydetails_options[<?php echo esc_attr( $args['label_for'] ); ?>]" id=<?php echo esc_attr( $args['label_for'] ); ?> value="<?php echo esc_attr($options['input2'])?>"/>
 	<?php
 }
 
 function mydetails_address( $args ) {
 	$options = get_option( 'mydetails_options' );
 	?>
-    <input type="text" name="mydetails_options[<?php echo esc_attr( $args['label_for'] ); ?>]" id=<?php echo esc_attr( $args['label_for'] ); ?> value="<?php echo esc_attr($option['input3'])?>"/>
+    <input type="text" name="mydetails_options[<?php echo esc_attr( $args['label_for'] ); ?>]" id=<?php echo esc_attr( $args['label_for'] ); ?> value="<?php echo esc_attr($options['input3'])?>"/>
 	<?php
+   
 }
 
 function mydetails_options_page()
