@@ -354,3 +354,4 @@ function mydetails_options_page_html() {
     </div>
     <?php
 }
+

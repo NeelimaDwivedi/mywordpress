@@ -1,0 +1,502 @@
+<?php
+/**
+ * The plugin bootstrap file
+ *
+ * This file is read by WordPress to generate the plugin information in the plugin
+ * admin area. This file also includes all of the dependencies used by the plugin,
+ * registers the activation and deactivation functions, and defines a function
+ * that starts the plugin.
+ *
+ * @link              https://makewebbetter.com/
+ * @since             1.0.0
+ * @package           Metaglobal
+ *
+ * @wordpress-plugin
+ * Plugin Name:       metaglobal
+ * Plugin URI:        https://makewebbetter.com/product/metaglobal/
+ * Description:       Your Basic Plugin
+ * Version:           1.0.0
+ * Author:            makewebbetter
+ * Author URI:        https://makewebbetter.com/
+ * Text Domain:       metaglobal
+ * Domain Path:       /languages
+ *
+ * Requires at least: 4.6
+ * Tested up to:      4.9.5
+ *
+ * License:           GNU General Public License v3.0
+ * License URI:       http://www.gnu.org/licenses/gpl-3.0.html
+ */
+
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	die;
+}
+
+/**
+ * Define plugin constants.
+ *
+ * @since             1.0.0
+ */
+function define_metaglobal_constants() {
+
+	metaglobal_constants( 'METAGLOBAL_VERSION', '1.0.0' );
+	metaglobal_constants( 'METAGLOBAL_DIR_PATH', plugin_dir_path( __FILE__ ) );
+	metaglobal_constants( 'METAGLOBAL_DIR_URL', plugin_dir_url( __FILE__ ) );
+	metaglobal_constants( 'METAGLOBAL_SERVER_URL', 'https://makewebbetter.com' );
+	metaglobal_constants( 'METAGLOBAL_ITEM_REFERENCE', 'metaglobal' );
+}
+
+
+/**
+ * Callable function for defining plugin constants.
+ *
+ * @param   String $key    Key for contant.
+ * @param   String $value   value for contant.
+ * @since             1.0.0
+ */
+function metaglobal_constants( $key, $value ) {
+
+	if ( ! defined( $key ) ) {
+
+		define( $key, $value );
+	}
+}
+
+/**
+ * The code that runs during plugin activation.
+ * This action is documented in includes/class-metaglobal-activator.php
+ */
+function activate_metaglobal() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-metaglobal-activator.php';
+	Metaglobal_Activator::metaglobal_activate();
+	$mwb_m_active_plugin = get_option( 'mwb_all_plugins_active', false );
+	if ( is_array( $mwb_m_active_plugin ) && ! empty( $mwb_m_active_plugin ) ) {
+		$mwb_m_active_plugin['metaglobal'] = array(
+			'plugin_name' => __( 'metaglobal', 'metaglobal' ),
+			'active' => '1',
+		);
+	} else {
+		$mwb_m_active_plugin = array();
+		$mwb_m_active_plugin['metaglobal'] = array(
+			'plugin_name' => __( 'metaglobal', 'metaglobal' ),
+			'active' => '1',
+		);
+	}
+	update_option( 'mwb_all_plugins_active', $mwb_m_active_plugin );
+}
+
+/**
+ * The code that runs during plugin deactivation.
+ * This action is documented in includes/class-metaglobal-deactivator.php
+ */
+function deactivate_metaglobal() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-metaglobal-deactivator.php';
+	Metaglobal_Deactivator::metaglobal_deactivate();
+	$mwb_m_deactive_plugin = get_option( 'mwb_all_plugins_active', false );
+	if ( is_array( $mwb_m_deactive_plugin ) && ! empty( $mwb_m_deactive_plugin ) ) {
+		foreach ( $mwb_m_deactive_plugin as $mwb_m_deactive_key => $mwb_m_deactive ) {
+			if ( 'metaglobal' === $mwb_m_deactive_key ) {
+				$mwb_m_deactive_plugin[ $mwb_m_deactive_key ]['active'] = '0';
+			}
+		}
+	}
+	update_option( 'mwb_all_plugins_active', $mwb_m_deactive_plugin );
+}
+
+register_activation_hook( __FILE__, 'activate_metaglobal' );
+register_deactivation_hook( __FILE__, 'deactivate_metaglobal' );
+
+/**
+ * The core plugin class that is used to define internationalization,
+ * admin-specific hooks, and public-facing site hooks.
+ */
+require plugin_dir_path( __FILE__ ) . 'includes/class-metaglobal.php';
+
+/**
+ * Begins execution of the plugin.
+ *
+ * Since everything within the plugin is registered via hooks,
+ * then kicking off the plugin from this point in the file does
+ * not affect the page life cycle.
+ *
+ * @since    1.0.0
+ */
+function run_metaglobal() {
+	define_metaglobal_constants();
+
+	$m_plugin_standard = new Metaglobal();
+	$m_plugin_standard->m_run();
+	$GLOBALS['m_mwb_m_obj'] = $m_plugin_standard;
+
+}
+run_metaglobal();
+
+// Add rest api endpoint for plugin.
+add_action( 'rest_api_init', 'm_add_default_endpoint' );
+
+/**
+ * Callback function for endpoints.
+ *
+ * @since    1.0.0
+ */
+function m_add_default_endpoint() {
+	register_rest_route(
+		'm-route',
+		'/m-dummy-data/',
+		array(
+			'methods'  => 'POST',
+			'callback' => 'mwb_m_default_callback',
+			'permission_callback' => 'mwb_m_default_permission_check',
+		)
+	);
+}
+
+/**
+ * API validation
+ * @param 	Array 	$request 	All information related with the api request containing in this array.
+ * @since    1.0.0
+ */
+function mwb_m_default_permission_check($request) {
+
+	// Add rest api validation for each request.
+	$result = true;
+	return $result;
+}
+
+/**
+ * Begins execution of api endpoint.
+ *
+ * @param   Array $request    All information related with the api request containing in this array.
+ * @return  Array   $mwb_m_response   return rest response to server from where the endpoint hits.
+ * @since    1.0.0
+ */
+function mwb_m_default_callback( $request ) {
+	require_once METAGLOBAL_DIR_PATH . 'includes/class-metaglobal-api-process.php';
+	$mwb_m_api_obj = new Metaglobal_Api_Process();
+	$mwb_m_resultsdata = $mwb_m_api_obj->mwb_m_default_process( $request );
+	if ( is_array( $mwb_m_resultsdata ) && isset( $mwb_m_resultsdata['status'] ) && 200 == $mwb_m_resultsdata['status'] ) {
+		unset( $mwb_m_resultsdata['status'] );
+		$mwb_m_response = new WP_REST_Response( $mwb_m_resultsdata, 200 );
+	} else {
+		$mwb_m_response = new WP_Error( $mwb_m_resultsdata );
+	}
+	return $mwb_m_response;
+}
+
+
+// Add settings link on plugin page.
+add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'metaglobal_settings_link' );
+
+/**
+ * Settings link.
+ *
+ * @since    1.0.0
+ * @param   Array $links    Settings link array.
+ */
+function metaglobal_settings_link( $links ) {
+
+	$my_link = array(
+		'<a href="' . admin_url( 'admin.php?page=metaglobal_menu' ) . '">' . __( 'Settings', 'metaglobal' ) . '</a>',
+	);
+	return array_merge( $my_link, $links );
+}
+
+
+
+
+
+//global setting
+
+
+
+/**
+ * @internal never define functions inside callbacks.
+ * these functions could be run multiple times; this would result in a fatal error.
+ */
+ 
+/**
+ * custom option and settings
+ */
+function globalreplace_settings_init() {
+    // Register a new setting for "wporg" page.
+    register_setting( 'globalreplace', 'globalreplace_options' );
+ 
+    // Register a new section in the "wporg" page.
+    add_settings_section(
+        'globalreplace_section_developers',
+        __( 'Global Word Replace.', 'globalreplace' ), 'globalreplace_section_developers_callback',
+        'globalreplace'
+    );
+ 
+    // Register a new field in the "wporg_section_developers" section, inside the "wporg" page.
+    add_settings_field(
+        'from', // As of WP 4.6 this value is used only internally.
+                                // Use $args' label_for to populate the id inside the callback.
+            __( 'From', 'globalreplace' ),
+        'globalreplace_field_from',
+        'globalreplace',
+        'globalreplace_section_developers',
+        array(
+            'label_for'         => 'from_input',
+            'class'             => 'globalreplace_row',
+            'globalreplace_custom_data' => 'custom',
+        )
+	);
+	add_settings_field(
+        'to', // As of WP 4.6 this value is used only internally.
+                                // Use $args' label_for to populate the id inside the callback.
+            __( 'To', 'globalreplace' ),
+        'globalreplace_field_to',
+        'globalreplace',
+        'globalreplace_section_developers',
+        array(
+            'label_for'         => 'to_input',
+            'class'             => 'globalreplace_row',
+            'globalreplace_custom_data' => 'custom',
+        )
+	);
+	add_settings_field(
+        'select', // As of WP 4.6 this value is used only internally.
+                                // Use $args' label_for to populate the id inside the callback.
+            __( 'Select', 'globalreplace' ),
+        'globalreplace_field_select',
+        'globalreplace',
+        'globalreplace_section_developers',
+        array(
+            'label_for'         => 'select_input',
+            'class'             => 'globalreplace_row',
+            'globalreplace_custom_data' => 'custom',
+        )
+    );
+}
+ 
+/**
+ * Register our wporg_settings_init to the admin_init action hook.
+ */
+add_action( 'admin_init', 'globalreplace_settings_init' );
+ 
+ 
+/**
+ * Custom option and settings:
+ *  - callback functions
+ */
+ 
+ 
+/**
+ * Developers section callback function.
+ *
+ * @param array $args  The settings array, defining title, id, callback.
+ */
+function globalreplace_section_developers_callback( $args ) {
+    ?>
+    <p id="<?php echo esc_attr( $args['id'] ); ?>"><?php esc_html_e( 'Global Replace setting.', 'globalreplace' ); ?></p>
+    <?php
+}
+ 
+/**
+ * Pill field callbakc function.
+ *
+ * WordPress has magic interaction with the following keys: label_for, class.
+ * - the "label_for" key value is used for the "for" attribute of the <label>.
+ * - the "class" key value is used for the "class" attribute of the <tr> containing the field.
+ * Note: you can add custom key value pairs to be used inside your callbacks.
+ *
+ * @param array $args
+ */
+function globalreplace_field_select( $args ) {
+    // Get the value of the setting we've registered with register_setting()
+    $options = get_option( 'globalreplace_options' );
+    ?>
+    <select
+            id="<?php echo esc_attr( $args['label_for'] ); ?>"
+            data-custom="<?php echo esc_attr( $args['globalreplace_custom_data'] ); ?>"
+            name="globalreplace_options[<?php echo esc_attr( $args['label_for'] ); ?>]">
+			<option value="">Select something...</option>
+        <option value="exact" <?php echo isset( $options[ $args['label_for'] ] ) ? ( selected( $options[ $args['label_for'] ], 'exact', false ) ) : ( '' ); ?>>
+            <?php esc_html_e( 'exact', 'globalreplace' ); ?>
+        </option>
+        <option value="contains" <?php echo isset( $options[ $args['label_for'] ] ) ? ( selected( $options[ $args['label_for'] ], 'contains', false ) ) : ( '' ); ?>>
+            <?php esc_html_e( 'contains', 'globalreplace' ); ?>
+        </option>
+    </select>
+    <?php
+}
+
+function globalreplace_field_from( $args ) {
+	$options = get_option( 'globalreplace_options' );
+	?>
+    <input type="text" name="globalreplace_options[<?php echo esc_attr( $args['label_for'] ); ?>]" id=<?php echo esc_attr( $args['label_for'] ); ?> value="<?php echo esc_attr($options['from_input'])?>"/>
+	<?php
+}
+
+function globalreplace_field_to( $args ) {
+	$options = get_option( 'globalreplace_options' );
+	?>
+    <input type="text" name="globalreplace_options[<?php echo esc_attr( $args['label_for'] ); ?>]" id=<?php echo esc_attr( $args['label_for'] ); ?> value="<?php echo esc_attr($options['to_input'])?>"/>
+	<?php
+}
+ 
+/**
+ * Add the top level menu page.
+ */
+function globalreplace_options_page() {
+    add_menu_page(
+        'Global Replace',
+        'Global Replace',
+        'manage_options',
+        'globalreplace',
+        'globalreplace_options_page_html'
+    );
+}
+ 
+ 
+/**
+ * Register our wporg_options_page to the admin_menu action hook.
+ */
+add_action( 'admin_menu', 'globalreplace_options_page' );
+ 
+ 
+/**
+ * Top level menu callback function
+ */
+function globalreplace_options_page_html() {
+    // check user capabilities
+    if ( ! current_user_can( 'manage_options' ) ) {
+        return;
+    }
+ 
+    // add error/update messages
+ 
+    // check if the user have submitted the settings
+    // WordPress will add the "settings-updated" $_GET parameter to the url
+    if ( isset( $_GET['settings-updated'] ) ) {
+        // add settings saved message with the class of "updated"
+        add_settings_error( 'globalreplace_messages', 'globalreplace_message', __( 'Settings Saved', 'globalreplace' ), 'updated' );
+    }
+ 
+    // show error/update messages
+    settings_errors( 'globalreplace_messages' );
+    ?>
+    <div class="wrap">
+        <h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
+        <form action="options.php" method="post">
+            <?php
+            // output security fields for the registered setting "wporg"
+            settings_fields( 'globalreplace' );
+            // output setting sections and their fields
+            // (sections are registered for "wporg", each field is registered to a specific section)
+            do_settings_sections( 'globalreplace' );
+            // output save settings button
+            submit_button( 'Save Settings' );
+            ?>
+        </form>
+    </div>
+    <?php
+}
+
+
+
+
+
+
+
+//custom post meta box
+
+function metasetting_add_custom_box() {
+    $screens = [ 'post', 'metasetting_cpt' ];
+    foreach ( $screens as $screen ) {
+        add_meta_box(
+            'metasetting_box_id',                 // Unique ID
+            'Custom Meta Box Title',      // Box title
+            'metasetting_custom_box_html',  // Content callback, must be of type callable
+            $screen                            // Post type
+        );
+    }
+}
+add_action( 'add_meta_boxes', 'metasetting_add_custom_box' );
+
+function metasetting_custom_box_html( $post ) {
+    $value= get_post_meta( $post->ID, '_metasetting_mymeta', true );
+	// print_r($value);die('hello');
+    ?>
+    <div class="postbox p-2">
+        <label for="metasetting-from"><b>From</b></label>
+        <input type="text" id="metasetting-from" name="metasetting-from" value="<?php echo $value['from']; ?>" >
+    </div>
+    <!--- to field-->
+	<?php
+	$value= get_post_meta( $post->ID, '_metasetting_mymeta', true );
+	?>
+    <div class="postbox p-2">
+        <label for="metasetting-to"><b>To</b></label>
+        <input type="text" id="metasetting-to" name="metasetting-to" value="<?php echo $value['to']; ?>" >
+    </div>
+    <!--- select field-->
+	<?php
+	$value= get_post_meta( $post->ID, '_metasetting_mymeta', true );
+	?>
+    <div class="postbox p-2">
+    <label for="metasetting-select"><b>Select</b></label>
+    <select name="metasetting-select" id="metasetting-select" >
+        <option value="">Select something...</option>
+        <option value="exact" <?php echo isset( $value['select']  ) ? ( selected( $value['select'] , 'exact', false ) ) : ( '' ); ?>><?php esc_html_e( 'exact', 'metasetting' ); ?></option>
+        <option value="contains" <?php echo isset( $value['select'] ) ? ( selected( $value['select'] , 'contains', false ) ) : ( '' ); ?>><?php esc_html_e( 'contains', 'metasetting' ); ?></option>
+    </select>
+    </div>
+    <?php
+}
+function metasetting_save_postdata( $post_id ) {
+	$arr=array('select'=>$_POST['metasetting-select'], 'from'=>$_POST['metasetting-from'], 'to'=>$_POST['metasetting-to']);
+	if ( array_key_exists( 'metasetting-select', $_POST ) && array_key_exists( 'metasetting-from', $_POST ) && array_key_exists( 'metasetting-to', $_POST )) {
+        update_post_meta(
+            $post_id,
+            '_metasetting_mymeta',
+            $arr
+        );
+    }
+}
+add_action( 'save_post', 'metasetting_save_postdata' );
+
+function metasetting_metacontent( $text ) {
+	global $post;
+	$metapost=get_post_meta($post->ID, '_metasetting_mymeta', true);
+	$from=$metapost['from'];
+	$to=$metapost['to'];
+	$select=$metapost['select'];
+	if($from!='' && $to!='') {
+	   if($select=='exact') {
+		   $var=str_replace(" " .$from.  " ",$to." ",$text);
+		   return $var;
+	   }	
+	   elseif($select=='contains') {
+		   $var=str_replace($from,$to,$text);
+		   return $var;
+	   }
+	} else {
+		$option=get_option( 'globalreplace_options' );
+	   if($option['select_input']=='exact') {
+		   $var=str_replace(" " .$option['from_input']. " ",$option['to_input']." ",$text);
+		   return $var;
+	   }	
+	   elseif($option['select_input']=='contains') {
+		   $var=str_replace($option['from_input'],$option['to_input'],$text);
+		   return $var;
+	   }	
+	}	
+}
+   add_filter( 'the_content', 'metasetting_metacontent');
+
+
+//    function replace_content( $text ) {
+// 	$option=get_option( 'globalreplace_options' );
+// 	   if($option['select_input']=='exact') {
+// 		   $var=str_replace(" " .$option['from_input']. " ",$option['to_input']." ",$text);
+// 		   return $var;
+// 	   }	
+// 	   elseif($option['select_input']=='contains') {
+// 		   $var=str_replace($option['from_input'],$option['to_input'],$text);
+// 		   return $var;
+// 	   }	
+//    }
+//    add_filter( 'the_content', 'replace_content');
