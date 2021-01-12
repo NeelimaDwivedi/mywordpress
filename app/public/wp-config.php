@@ -64,7 +64,7 @@ define('NONCE_SALT',       'I/D6idPkKnY7yjYKZBtG713LBgyxm0tuc8np2G9DQ8PDm2loU+aX
 $table_prefix = 'wp_';
 
 define( 'WP_DEBUG', false);
-
+//error_reporting(0);
 
 /* That's all, stop editing! Happy publishing. */
 

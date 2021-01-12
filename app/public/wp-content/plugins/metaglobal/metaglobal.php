@@ -404,7 +404,7 @@ function globalreplace_options_page_html() {
 //custom post meta box
 
 function metasetting_add_custom_box() {
-    $screens = [ 'post', 'metasetting_cpt' ];
+    $screens = [ 'post', 'metasetting_cpt'];
     foreach ( $screens as $screen ) {
         add_meta_box(
             'metasetting_box_id',                 // Unique ID
@@ -422,7 +422,7 @@ function metasetting_custom_box_html( $post ) {
     ?>
     <div class="postbox p-2">
         <label for="metasetting-from"><b>From</b></label>
-        <input type="text" id="metasetting-from" name="metasetting-from" value="<?php echo $value['from']; ?>" >
+        <input type="text" id="metasetting-from" name="metasetting-from" value="<?php echo isset($value['from'])?$value['from']:" "; ?>" >
     </div>
     <!--- to field-->
 	<?php
@@ -430,7 +430,7 @@ function metasetting_custom_box_html( $post ) {
 	?>
     <div class="postbox p-2">
         <label for="metasetting-to"><b>To</b></label>
-        <input type="text" id="metasetting-to" name="metasetting-to" value="<?php echo $value['to']; ?>" >
+        <input type="text" id="metasetting-to" name="metasetting-to" value="<?php echo isset($value['to'])?$value['to']:" "; ?>" >
     </div>
     <!--- select field-->
 	<?php
@@ -447,6 +447,7 @@ function metasetting_custom_box_html( $post ) {
     <?php
 }
 function metasetting_save_postdata( $post_id ) {
+    $post=get_post_type( $post_id );
 	$arr=array('select'=>$_POST['metasetting-select'], 'from'=>$_POST['metasetting-from'], 'to'=>$_POST['metasetting-to']);
 	if ( array_key_exists( 'metasetting-select', $_POST ) && array_key_exists( 'metasetting-from', $_POST ) && array_key_exists( 'metasetting-to', $_POST )) {
         update_post_meta(
@@ -466,7 +467,7 @@ function metasetting_metacontent( $text ) {
 	$select=$metapost['select'];
 	if($from!='' && $to!='') {
 	   if($select=='exact') {
-		   $var=str_replace(" " .$from.  " ",$to." ",$text);
+		   $var=str_replace(" " .$from.  " "," ".$to." ",$text);
 		   return $var;
 	   }	
 	   elseif($select=='contains') {
@@ -485,18 +486,138 @@ function metasetting_metacontent( $text ) {
 	   }	
 	}	
 }
-   add_filter( 'the_content', 'metasetting_metacontent');
+   
 
 
-//    function replace_content( $text ) {
-// 	$option=get_option( 'globalreplace_options' );
-// 	   if($option['select_input']=='exact') {
-// 		   $var=str_replace(" " .$option['from_input']. " ",$option['to_input']." ",$text);
-// 		   return $var;
-// 	   }	
-// 	   elseif($option['select_input']=='contains') {
-// 		   $var=str_replace($option['from_input'],$option['to_input'],$text);
-// 		   return $var;
-// 	   }	
-//    }
-//    add_filter( 'the_content', 'replace_content');
+
+   //cpt
+
+
+   function demo_custom_post_type() {
+    register_post_type('demo_product',
+        array(
+            'labels'      => array(
+                'name'          => __('Products', 'metaglobal'),
+				'singular_name' => __('Product', 'metaglobal'),
+				'featured_image'=>__('Product Image', 'metaglobal'),
+				'set_featured_image'=>__('Set Product Image', 'metaglobal'),
+				'remove_featured_image'=>__('Remove Image', 'metaglobal'),
+				'use_featured_image'=>__('Use Image', 'metaglobal'),
+				'archives'=>__('Food Products', 'metaglobal'),
+				'add_new'=>__('Add Product', 'metaglobal'),
+				'add_new_item'=>__('Add New Product', 'metaglobal'),
+            ),
+                'public'      => true,
+				'has_archive' => 'product',
+				'rewrite'=>array('has_front'=>true),
+				'menu_icon'=>'dashicons-screenoptions',
+				'supports'=>array('title', 'editor', 'thumbnail'),
+				'show_in_rest'=>true,
+        )
+    );
+}
+add_action('init', 'demo_custom_post_type');
+
+
+
+function demo_register_category_taxonomy() {
+    $labels= array(
+        'name'=>__('Product Categories', 'metaglobal'),
+        'Singular_name'=>__('Product Category', 'metaglobal'),
+        'add_new_item'=>__('Add New Product Category', 'metaglobal'),
+    );
+    $args=array(
+        'labels'=>$labels,
+        'public'=>true,
+        'show_admin_column'=>true,
+        'show_in_qick_edit'=>true,
+        'show_in_rest'=>true,
+        'hierarchical'=>true,
+        'rewrite'=>array('hierarchical'=>true, 'has_front'=>true),
+    );
+    $post_types= array('demo_product');
+
+    register_taxonomy('category', $post_types, $args);
+}
+add_action('init', 'demo_register_category_taxonomy');
+
+
+
+function demo_register_tag_taxonomy() {
+    $labels= array(
+        'name'=>__('Product Tags', 'metaglobal'),
+        'Singular_name'=>__('Product Tag', 'metaglobal'),
+        'add_new_item'=>__('Add New Tag', 'metaglobal'),
+    );
+    $args=array(
+        'labels'=>$labels,
+        'public'=>true,
+        'show_admin_column'=>true,
+        'show_in_qick_edit'=>true,
+        'show_in_rest'=>true,
+    );
+    $post_types= array('demo_product');
+
+    register_taxonomy('tag', $post_types, $args);
+}
+add_action('init', 'demo_register_tag_taxonomy');
+
+// cpt metabox
+
+
+function productmeta_add_custom_box() {
+    $screens = [ 'demo_product', 'metasetting_cpt'];
+    foreach ( $screens as $screen ) {
+        add_meta_box(
+            'metasetting_box_id',                 // Unique ID
+            'Custom Meta Box Title',      // Box title
+            'productmeta_custom_box_html',  // Content callback, must be of type callable
+            $screen                            // Post type
+        );
+    }
+}
+add_action( 'add_meta_boxes', 'productmeta_add_custom_box' );
+
+
+function productmeta_custom_box_html( $post ) {
+    $value= get_post_meta( $post->ID, '_product_meta', true );
+	// print_r($value);die('hello');
+    ?>
+    <div class="postbox p-2">
+        <label for="metasetting-price"><b>Price</b></label>
+        <input type="text" id="metasetting-price" name="metasetting-price" value="<?php echo isset($value['price'])? $value['price']:" ";  ?>" >
+    </div>
+    <!--- to field-->
+	<?php
+	$value= get_post_meta( $post->ID, '_product_meta', true );
+	?>
+    <div class="postbox p-2">
+        <label for="metasetting-sku"><b>SKU</b></label>
+        <input type="text" id="metasetting-sku" name="metasetting-sku" value="<?php echo isset($value['sku'])? $value['sku']:" ";  ?>" >
+    </div>
+
+    <?php
+    $value= get_post_meta( $post->ID, '_product_meta', true );
+	?>
+    <div class="postbox p-2">
+        <label for="metasetting-stock"><b>Stock</b></label>
+        <input type="text" id="metasetting-stock" name="metasetting-stock" value="<?php echo isset($value['stock'])? $value['stock']:" "; ?>" >
+    </div>
+    <?php
+}
+function product_save_postdata( $post_id ) {
+    $post_type = get_post_type();
+    if($post_type=='demo_product') {
+        $arr=array('price'=>$_POST['metasetting-price'], 'sku'=>$_POST['metasetting-sku'], 'stock'=>$_POST['metasetting-stock']);
+        if ( array_key_exists( 'metasetting-price', $_POST ) && array_key_exists( 'metasetting-sku', $_POST ) && array_key_exists( 'metasetting-stock', $_POST )) {
+            update_post_meta(
+                $post_id,
+                '_product_meta',
+                $arr
+            );
+        }
+    } else {
+        add_filter( 'the_content', 'metasetting_metacontent');
+    }
+}
+add_action( 'save_post', 'product_save_postdata' );
