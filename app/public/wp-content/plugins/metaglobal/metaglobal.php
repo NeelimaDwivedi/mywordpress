@@ -529,15 +529,17 @@ function demo_register_category_taxonomy() {
     $args=array(
         'labels'=>$labels,
         'public'=>true,
+        'show_ui'=> true,
+        'show_in_nav_menus'   => true,
         'show_admin_column'=>true,
         'show_in_qick_edit'=>true,
         'show_in_rest'=>true,
         'hierarchical'=>true,
-        'rewrite'=>array('hierarchical'=>true, 'has_front'=>true),
+        'rewrite'=>array('hierarchical'=>true, 'slug'=>'product_category', 'with_front'=>false),
     );
-    $post_types= array('demo_product');
+    //$post_types= array('demo_product');
 
-    register_taxonomy('category', $post_types, $args);
+    register_taxonomy('product_category', 'demo_product', $args);
 }
 add_action('init', 'demo_register_category_taxonomy');
 
@@ -556,9 +558,9 @@ function demo_register_tag_taxonomy() {
         'show_in_qick_edit'=>true,
         'show_in_rest'=>true,
     );
-    $post_types= array('demo_product');
+    // $post_types= array('demo_product');
 
-    register_taxonomy('tag', $post_types, $args);
+    register_taxonomy('product_tag', 'demo_product', $args);
 }
 add_action('init', 'demo_register_tag_taxonomy');
 

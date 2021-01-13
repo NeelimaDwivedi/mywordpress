@@ -14,7 +14,14 @@ get_header();
 while ( have_posts() ) :
     the_post();
     $value= get_post_meta( $post->ID, '_product_meta', true );
-    echo '<div class="card">';
+	echo '<div class="card">';
+	$cate_terms = get_the_terms( $post->ID, 'product_category');
+	$tag_terms = get_the_terms( $post->ID, 'product_tag');
+	echo "Category-"." ".$cate_terms[0]->name;?>
+	<br>
+	<?php
+	echo "Tag-"." ". $tag_terms[0]->name;
+	// die();
     echo '<img src="'.get_the_post_thumbnail_url($post->ID).'" alt="image" style="width:100%">';
     echo '<h2 style="text-align:center">'. get_the_title($post->ID).'</h2>';
     echo '<p class="price">'.isset($value['stock'])? 'INR'." ".$value['price']:" ".'</p>';
