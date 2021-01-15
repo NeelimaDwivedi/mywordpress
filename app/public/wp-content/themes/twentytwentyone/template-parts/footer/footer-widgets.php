@@ -20,7 +20,7 @@ if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
            	);
 			$cats = get_categories($args);?>
 			<ul><!--list start-->
-			<h5>Product Category</h5>
+			<?php _e( '<h5>Product Category</h5>'); ?>
 			<?php
    			foreach($cats as $cat) {
 		?>
@@ -29,13 +29,12 @@ if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
            <?php echo $cat->name; ?>
       	</a>
 		</li>
+
 		<?php
 			}
 		?>		   
 		</ul><!--list end-->
 	
-
-
 	</aside><!-- .widget-area -->
 
 <?php endif; ?>

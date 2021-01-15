@@ -43,3 +43,71 @@
 [12-Jan-2021 20:04:31] NOTICE: Terminating ...
 [13-Jan-2021 09:28:02] NOTICE: fpm is running, pid 1606
 [13-Jan-2021 09:28:02] NOTICE: ready to handle connections
+[13-Jan-2021 18:20:24] NOTICE: fpm is running, pid 3850
+[13-Jan-2021 18:20:24] NOTICE: ready to handle connections
+[13-Jan-2021 18:22:09] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[13-Jan-2021 18:22:09] ERROR: FPM initialization failed
+[13-Jan-2021 18:22:09] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[13-Jan-2021 18:22:09] ERROR: FPM initialization failed
+[13-Jan-2021 18:22:10] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[13-Jan-2021 18:22:10] ERROR: FPM initialization failed
+[13-Jan-2021 18:22:10] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[13-Jan-2021 18:22:10] ERROR: FPM initialization failed
+[13-Jan-2021 18:24:27] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[13-Jan-2021 18:24:27] ERROR: FPM initialization failed
+[13-Jan-2021 18:24:27] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[13-Jan-2021 18:24:27] ERROR: FPM initialization failed
+[13-Jan-2021 18:24:28] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[13-Jan-2021 18:24:28] ERROR: FPM initialization failed
+[13-Jan-2021 18:24:29] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[13-Jan-2021 18:24:29] ERROR: FPM initialization failed
+[13-Jan-2021 20:24:56] NOTICE: Terminating ...
+[14-Jan-2021 09:42:49] NOTICE: fpm is running, pid 2684
+[14-Jan-2021 09:42:49] NOTICE: ready to handle connections
+[14-Jan-2021 09:45:34] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[14-Jan-2021 09:45:34] ERROR: FPM initialization failed
+[14-Jan-2021 09:45:35] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[14-Jan-2021 09:45:35] ERROR: FPM initialization failed
+[14-Jan-2021 09:45:35] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[14-Jan-2021 09:45:35] ERROR: FPM initialization failed
+[14-Jan-2021 09:45:36] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[14-Jan-2021 09:45:36] ERROR: FPM initialization failed
+[14-Jan-2021 19:51:12] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[14-Jan-2021 19:51:12] ERROR: FPM initialization failed
+[14-Jan-2021 19:51:13] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[14-Jan-2021 19:51:13] ERROR: FPM initialization failed
+[14-Jan-2021 19:51:13] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[14-Jan-2021 19:51:13] ERROR: FPM initialization failed
+[14-Jan-2021 19:51:14] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[14-Jan-2021 19:51:14] ERROR: FPM initialization failed
+[14-Jan-2021 20:11:46] NOTICE: Terminating ...
+[14-Jan-2021 20:11:46] NOTICE: exiting, bye-bye!
+[15-Jan-2021 09:31:52] NOTICE: fpm is running, pid 3225
+[15-Jan-2021 09:31:52] NOTICE: ready to handle connections
+[15-Jan-2021 09:33:38] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[15-Jan-2021 09:33:38] ERROR: FPM initialization failed
+[15-Jan-2021 09:33:38] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[15-Jan-2021 09:33:38] ERROR: FPM initialization failed
+[15-Jan-2021 09:33:39] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[15-Jan-2021 09:33:39] ERROR: FPM initialization failed
+[15-Jan-2021 09:33:39] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[15-Jan-2021 09:33:39] ERROR: FPM initialization failed
+[15-Jan-2021 11:45:45] NOTICE: Terminating ...
+[15-Jan-2021 11:51:38] NOTICE: fpm is running, pid 1638
+[15-Jan-2021 11:51:38] NOTICE: ready to handle connections
+[15-Jan-2021 11:52:22] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[15-Jan-2021 11:52:22] ERROR: FPM initialization failed
+[15-Jan-2021 11:52:22] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[15-Jan-2021 11:52:22] ERROR: FPM initialization failed
+[15-Jan-2021 11:52:23] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[15-Jan-2021 11:52:23] ERROR: FPM initialization failed
+[15-Jan-2021 11:52:23] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[15-Jan-2021 11:52:23] ERROR: FPM initialization failed
+[15-Jan-2021 15:07:26] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[15-Jan-2021 15:07:26] ERROR: FPM initialization failed
+[15-Jan-2021 15:07:27] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[15-Jan-2021 15:07:27] ERROR: FPM initialization failed
+[15-Jan-2021 15:07:28] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[15-Jan-2021 15:07:28] ERROR: FPM initialization failed
+[15-Jan-2021 15:07:28] ERROR: Another FPM instance seems to already listen on /home/cedcoss/.config/Local/run/-YgEgcR-u/php/php-fpm.socket
+[15-Jan-2021 15:07:28] ERROR: FPM initialization failed

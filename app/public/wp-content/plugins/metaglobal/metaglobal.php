@@ -512,7 +512,8 @@ function metasetting_metacontent( $text ) {
 				'rewrite'=>array('has_front'=>true),
 				'menu_icon'=>'dashicons-screenoptions',
 				'supports'=>array('title', 'editor', 'thumbnail'),
-				'show_in_rest'=>true,
+                'show_in_rest'=>true,
+                'show_in_admin_bar'=>true,
         )
     );
 }
@@ -523,7 +524,7 @@ add_action('init', 'demo_custom_post_type');
 function demo_register_category_taxonomy() {
     $labels= array(
         'name'=>__('Product Categories', 'metaglobal'),
-        'Singular_name'=>__('Product Category', 'metaglobal'),
+        'singular_name'=>__('Product Category', 'metaglobal'),
         'add_new_item'=>__('Add New Product Category', 'metaglobal'),
     );
     $args=array(
@@ -537,9 +538,9 @@ function demo_register_category_taxonomy() {
         'hierarchical'=>true,
         'rewrite'=>array('hierarchical'=>true, 'slug'=>'product_category', 'with_front'=>false),
     );
-    //$post_types= array('demo_product');
+    $post_types= array('demo_product');
 
-    register_taxonomy('product_category', 'demo_product', $args);
+    register_taxonomy('product_category', $post_types, $args);
 }
 add_action('init', 'demo_register_category_taxonomy');
 
@@ -555,12 +556,12 @@ function demo_register_tag_taxonomy() {
         'labels'=>$labels,
         'public'=>true,
         'show_admin_column'=>true,
-        'show_in_qick_edit'=>true,
+        'show_in_qick_edit'=>false,
         'show_in_rest'=>true,
     );
-    // $post_types= array('demo_product');
+     $post_types= array('demo_product');
 
-    register_taxonomy('product_tag', 'demo_product', $args);
+    register_taxonomy('product_tag', $post_types, $args);
 }
 add_action('init', 'demo_register_tag_taxonomy');
 
@@ -623,3 +624,211 @@ function product_save_postdata( $post_id ) {
     }
 }
 add_action( 'save_post', 'product_save_postdata' );
+
+
+//user
+
+function demo_customer_role() {
+    add_role(
+        'customer_role',
+        'Customer Role',
+        array(
+            'read'         => true,
+            'edit_posts'   => true,
+            'upload_files' => true,
+        ),
+    );
+}
+ 
+// Add the simple_role.
+add_action( 'init', 'demo_customer_role' );
+
+function custom_restrict_admin()
+{
+  if (!current_user_can('administrator') && ! is_admin())
+  {
+    show_admin_bar(false); //remove admin bar
+  }
+}
+add_action( 'init', 'custom_restrict_admin' );
+
+
+function customer_register() {
+    $errors =array();
+    if(isset($_POST['registersubmit'])) {
+        $user_name=isset($_POST['uname'])?$_POST['uname']:'';
+        $user_email=isset($_POST['uemail'])?$_POST['uemail']:'';
+        $user_password=isset($_POST['upass'])?$_POST['upass']:'';
+        $user_address=isset($_POST['uaddress'])?$_POST['uaddress']:'';
+        $user_mobile=isset($_POST['umob'])?$_POST['umob']:'';
+        $user_dob=isset($_POST['udob'])?$_POST['udob']:'';
+       
+    
+        if ($user_name=='') {
+            $errors[] =array('msg'=>'Username is required');
+        } else {
+            if (!preg_match("/^[a-zA-Z-' ]*$/" ,$user_name)) {
+                $errors[]=array('msg'=>'Only letters and white space allowed in name') ;
+            }
+        }
+        if($user_password=='') {
+            $errors[] =array('msg'=>'Password is required');
+        }
+        if ($user_mobile=='') {
+            $errors[] =array('msg'=>'Mobile no. is required');
+        } else {
+            if (!preg_match('/^[0-9]{10}+$/', $user_mobile)) {
+                $errors[]=array('msg'=>'Invalid Mobile no. format');
+            }
+        }
+        if($user_email=='') {
+            $errors[] =array('msg'=>'Email is required');
+        }else {
+            if (!filter_var($user_email, FILTER_VALIDATE_EMAIL)) {
+                $errors[] =array('msg'=>'Invalid email format');
+            }
+        }
+        if($user_address=='') {
+            $errors[] =array('msg'=>'Address is required');
+        }
+        if($user_dob=='') {
+            $errors[] =array('msg'=>'DOB is required');
+        }
+
+        if(sizeof($errors)==0) {
+            $user_id=wp_create_user($user_name, $user_password, $user_email);
+            $user_data = [
+                'user_name' => $user_name,
+                'user_password'  => $user_password,
+                'user_email'   => $user_email,
+                'role'=>'Customer Role'
+            ];
+            wp_insert_user($user_data);
+            add_user_meta($user_id, 'address',$user_address);
+            add_user_meta($user_id, 'mobile',$user_mobile);
+            add_user_meta($user_id, 'dob',$user_dob);
+            print_r($user_id);
+
+            echo '<script>alert("Valid Info")</script>';
+        } else {
+            foreach($errors as $v){
+                echo '<ul>';
+                foreach($v as $k1=>$v1) {
+                    echo '<li>'.$v1.'</li>';
+                }
+                echo '</ul>';
+            }
+            
+        }
+    }
+}
+
+add_action('init', 'customer_register');
+
+function customer_login() {
+    
+    if (isset($_POST['loginsubmit'])) {
+        $creds = array();
+        $username=esc_attr($_POST["username"]);
+        $userpassword=esc_attr($_POST["userpass"]);
+        $creds['user_login'] = $username;
+        $creds['user_password'] = $userpassword;
+        $creds['remember'] = true;        
+        $user = wp_signon( $creds, false );
+        print_r($user);
+        if ( is_wp_error($user) ) {
+            echo $user->get_error_message();
+        }else {
+            wp_safe_redirect(home_url());                                     
+            
+        }
+	        
+    }
+    
+
+
+}
+add_action('init', 'customer_login');
+
+
+function my_wp_nav_menu_args( $args = '' ) {
+ 
+    if( is_user_logged_in() ) { 
+        $args['menu'] = 'mymenu2';
+    } else { 
+        $args['menu'] = 'mymenu';
+    } 
+        return $args;
+}
+add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
+
+ function customer_meta_update() {
+    $errors=array();
+    if(isset($_POST['updatersubmit'])) {
+        $user_id=get_current_user_id();
+        $user_address=$_POST['uaddress'];
+        $user_mobile=$_POST['umob'];
+        $user_dob=$_POST['udob'];
+        if ($user_mobile=='') {
+            $errors[] =array('msg'=>'Mobile no. is required');
+        } else {
+            if (!preg_match('/^[0-9]{10}+$/', $user_mobile)) {
+                $errors[]=array('msg'=>'Invalid Mobile no. format');
+            }
+        }
+        if($user_address=='') {
+            $errors[] =array('msg'=>'Address is required');
+        }
+        if($user_dob=='') {
+            $errors[] =array('msg'=>'DOB is required');
+        }
+        if(sizeof($errors)==0) {
+            update_usermeta($user_id, 'address', $user_address);
+            update_usermeta($user_id, 'mobile', $user_mobile);
+            update_usermeta($user_id, 'dob', $user_dob);
+            echo '<script>alert("Valid Info")</script>';
+        }else {
+            foreach($errors as $v){
+                echo '<ul>';
+                foreach($v as $k1=>$v1) {
+                    echo '<li>'.$v1.'</li>';
+                }
+                echo '</ul>';
+            }
+        }
+    }
+ } 
+ add_action('init', 'customer_meta_update');
+
+
+ //logout function
+ add_action('init', 'check_logout');
+
+function check_logout() {
+    if(isset($_GET['logaction'])) {
+        wp_logout();
+        wp_safe_redirect(site_url());
+    }
+}
+
+
+
+ 
+//function demo_simple_role_caps() {
+    // Gets the simple_role role object.
+    //$role = get_role( 'simple_role' );
+ 
+    // Add a new capability.
+    //$role->add_cap( 'edit_others_posts', true );
+//}
+ 
+// Add simple_role capabilities, priority must be after the initial role definition.
+//add_action( 'init', 'demo_simple_role_caps', 11 ); 
+
+//function demo_simple_capability_remove() {
+    //$role=get_role('simple_role');
+    //unset( $role->capabilities[ 'edit_others_posts' ] );
+    //wp_roles()->remove_cap( $role->name, 'edit_others_posts' );
+    
+//}
+//add_action( 'init', 'demo_simple_capability_remove' );
